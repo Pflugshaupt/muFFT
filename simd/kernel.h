@@ -140,7 +140,9 @@ static inline MM splat_complex(const void *ptr)
 #define splat_const_dual_complex(a, b, real, imag) set_ps(imag, real, b, a)
 static inline MM addsub_ps(MM a, MM b)
 {
-    return vfmaq_f32(a, set_ps(1.f, -1.f, 1.f, -1.f), b);
+    float32x4_t rs = vsubq_f32(a, b);
+    float32x4_t ra = vaddq_f32(a, b);
+    return vtrn2q_f32(vrev64q_f32(rs), ra);
 }
 #define unpacklo_pd(a, b) vzip1q_f64(a, b)
 #define unpackhi_pd(a, b) vzip2q_f64(a, b)
