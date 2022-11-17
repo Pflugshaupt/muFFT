@@ -115,6 +115,13 @@ unsigned mufft_get_cpu_flags(void)
     return cpu;
 }
 
+#elif defined(__arm64__) || defined(__aarch64__) || defined(_M_ARM64)
+unsigned mufft_get_cpu_flags(void)
+{
+    return MUFFT_FLAG_CPU_AARCH64;
+}
+
+
 #else
 unsigned mufft_get_cpu_flags(void)
 {

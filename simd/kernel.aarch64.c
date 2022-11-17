@@ -16,13 +16,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#if __i386__ || __x86_64__
+#if defined(__arm64__) || defined(__aarch64__) || defined(_M_ARM64)
 
-#ifndef __SSE__
-#define __SSE__ 1
+#ifndef __ARM_NEON__
+#define __ARM_NEON__ (1)
 #endif
-#undef __SSE3__
-#undef __AVX__
+
 #include "kernel.h"
 
 #endif

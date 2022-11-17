@@ -16,6 +16,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if __i386__ || __x86_64__
+
 #ifndef __SSE__
 #define __SSE__ 1
 #endif
@@ -25,3 +27,4 @@
 #undef __AVX__
 #include "kernel.h"
 
+#endif
