@@ -16,7 +16,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#if __i386__ || __x86_64__
+#if __i386__ || __x86_64__ || defined(_M_IX86) || defined(_M_X64)
 
 #ifndef __SSE__
 #define __SSE__ 1

@@ -160,7 +160,7 @@ typedef void (*mufft_r2c_resolve_func)(cfloat * MUFFT_RESTRICT output, const cfl
     FFT_2D_FUNC(radix4_generic_vert, arch) \
     FFT_2D_FUNC(radix2_generic_vert, arch)
 
-#if __i386__ || __x86_64__
+#if __i386__ || __x86_64__ || defined(_M_IX86) || defined(_M_X64)
 DECLARE_FFT_CPU(avx)
 DECLARE_FFT_CPU(sse3)
 DECLARE_FFT_CPU(sse)

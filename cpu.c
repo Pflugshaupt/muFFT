@@ -22,12 +22,12 @@
 #ifdef _MSC_VER
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#if __i386__ || __x86_64__
+#if __i386__ || __x86_64__ || defined(_M_IX86) || defined(_M_X64)
 #include <intrin.h>
 #endif
 #endif
 
-#if __i386__ || __x86_64__
+#if __i386__ || __x86_64__ || defined(_M_IX86) || defined(_M_X64)
 
 /// \brief Wrapper routine for x86 CPUID
 static void mufft_x86_cpuid(int func, int flags[4])

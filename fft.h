@@ -50,7 +50,7 @@ extern "C" {
 
 #if MUFFT_BUILD_SIMD_VARIANTS
 // I needed this for simple UB2 builds on macOS
-#if __i386__ || __x86_64__
+#if __i386__ || __x86_64__ || defined(_M_IX86) || defined(_M_X64)
 #define MUFFT_HAVE_SSE (1)
 #define MUFFT_HAVE_SSE3 (1)
 #define MUFFT_HAVE_AVX (1)
